@@ -32,6 +32,17 @@ This skill provides comprehensive guidance for managing Gmail emails, labels, an
 - **Hyper MCP installed and connected.** [https://app.hyperfx.ai/mcp](https://app.hyperfx.ai/mcp)
 - **Gmail integration** enabled at [https://app.hyperfx.ai/apps](https://app.hyperfx.ai/apps).
 
+### How to run the tools in this skill
+
+Every tool in this skill is named by its canonical tool name. Run it with the call your surface gives you:
+
+| Surface | Find a tool | Run it |
+| --- | --- | --- |
+| MCP client (Claude, Cursor, Codex, ChatGPT) | `search("<what you want to do>")`, then `describe("<name>")` | `call("<name>", {...})` |
+| Hyper CLI | `hyperai search "<what you want to do>"`, then `hyperai describe <name>` | `hyperai call <name> --json '{...}'` |
+
+If a tool is not found, its integration is not connected or not enabled for the workspace: stop and tell the user which integration to connect.
+
 ## Label Operations - Critical Distinctions
 
 ### ADD LABEL (keeps email in current location + adds new label)

@@ -17,7 +17,18 @@ through `https://api.ads.openai.com/v1`.
 - **Hyper MCP installed and connected.** [https://app.hyperfx.ai/mcp](https://app.hyperfx.ai/mcp)
 - **OpenAI Ads integration connected** (an OpenAI Ads API key, scoped to one ad account) at [https://app.hyperfx.ai/apps](https://app.hyperfx.ai/apps).
 
-If `openai_ads_ad_accounts_get` is not in the tool list, stop and tell the user to enable Hyper MCP and connect OpenAI Ads. After connecting, `openai_ads_health_check()` verifies the key — if `connected=false`, the API key is missing, invalid, or expired.
+If `search("openai_ads_ad_accounts_get")` does not find `openai_ads_ad_accounts_get`, stop and tell the user to enable Hyper MCP and connect OpenAI Ads. After connecting, `openai_ads_health_check()` verifies the key — if `connected=false`, the API key is missing, invalid, or expired.
+
+### How to run the tools in this skill
+
+Every tool in this skill is named by its canonical tool name. Run it with the call your surface gives you:
+
+| Surface | Find a tool | Run it |
+| --- | --- | --- |
+| MCP client (Claude, Cursor, Codex, ChatGPT) | `search("<what you want to do>")`, then `describe("<name>")` | `call("<name>", {...})` |
+| Hyper CLI | `hyperai search "<what you want to do>"`, then `hyperai describe <name>` | `hyperai call <name> --json '{...}'` |
+
+If a tool is not found, its integration is not connected or not enabled for the workspace: stop and tell the user which integration to connect.
 
 ## Out of scope — defer to other skills
 

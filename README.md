@@ -29,6 +29,17 @@ What's in it:
 
 ---
 
+### Running the tools a skill names
+
+Every tool in a skill is named by its canonical tool name, and that one name works on every surface:
+
+| Surface | Find a tool | Run it |
+| --- | --- | --- |
+| MCP client | `search("<what you want to do>")`, `describe("<name>")` | `call("<name>", {...})` |
+| Hyper CLI | `hyperai search "..."`, `hyperai describe <name>` | `hyperai call <name> --json '{...}'` |
+
+The Hyper MCP lists six tools (`search`, `describe`, `call`, `connections_list`, `connections_use`, `info`); every other tool runs through `call`. A client that sends a tool name directly still works.
+
 ## Install
 
 ```bash

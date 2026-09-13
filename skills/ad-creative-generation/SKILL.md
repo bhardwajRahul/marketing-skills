@@ -17,6 +17,17 @@ Generate ad creatives — both visuals and copy — that match a brand's identit
 
 This skill assumes the [Hyper MCP](https://app.hyperfx.ai/mcp) is connected to your agent so the tools below are available. Brand extraction also requires Firecrawl to be configured under your Hyper integrations.
 
+### How to run the tools in this skill
+
+Every tool in this skill is named by its canonical tool name. Run it with the call your surface gives you:
+
+| Surface | Find a tool | Run it |
+| --- | --- | --- |
+| MCP client (Claude, Cursor, Codex, ChatGPT) | `search("<what you want to do>")`, then `describe("<name>")` | `call("<name>", {...})` |
+| Hyper CLI | `hyperai search "<what you want to do>"`, then `hyperai describe <name>` | `hyperai call <name> --json '{...}'` |
+
+If a tool is not found, its integration is not connected or not enabled for the workspace: stop and tell the user which integration to connect.
+
 ## Tool surface
 
 | Group | Tools |

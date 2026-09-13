@@ -16,7 +16,18 @@ Strategic guide for managing Snapchat advertising via the Snapchat Marketing API
 - **Hyper MCP installed and connected.** [https://app.hyperfx.ai/mcp](https://app.hyperfx.ai/mcp)
 - **Snapchat Ads integration connected** (a Snap Business account with ad account access) at [https://app.hyperfx.ai/apps](https://app.hyperfx.ai/apps).
 
-If `snapchat_ads_list_organizations` is not in the tool list, stop and tell the user to enable Hyper MCP and connect Snapchat Ads. Creating ad squads or serving ads also requires an **active funding source** on the ad account — campaigns, media, and creatives can be created without one.
+If `search("snapchat_ads_list_organizations")` does not find `snapchat_ads_list_organizations`, stop and tell the user to enable Hyper MCP and connect Snapchat Ads. Creating ad squads or serving ads also requires an **active funding source** on the ad account — campaigns, media, and creatives can be created without one.
+
+### How to run the tools in this skill
+
+Every tool in this skill is named by its canonical tool name. Run it with the call your surface gives you:
+
+| Surface | Find a tool | Run it |
+| --- | --- | --- |
+| MCP client (Claude, Cursor, Codex, ChatGPT) | `search("<what you want to do>")`, then `describe("<name>")` | `call("<name>", {...})` |
+| Hyper CLI | `hyperai search "<what you want to do>"`, then `hyperai describe <name>` | `hyperai call <name> --json '{...}'` |
+
+If a tool is not found, its integration is not connected or not enabled for the workspace: stop and tell the user which integration to connect.
 
 ## Out of scope — defer to other skills
 
